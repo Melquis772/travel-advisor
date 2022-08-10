@@ -12,7 +12,7 @@ const Footer = () => {
         <>
             <AppBar position="static" >
                 <Box display="flex" justifyContent="center" alignItems="center" className={classes.footer}>
-                    <Typography variant="h9">&copy; 2022 Melquisedec Sepulveda</Typography>
+                    <Typography variant="subtitle2">&copy; 2022 Melquisedec Sepulveda</Typography>
                 </Box>
             </AppBar>
 

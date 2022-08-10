@@ -8,7 +8,7 @@ import useStyles from './styles';
 
 const PlaceDetails = ({ place, selected, refProp }) => {
     if (selected) refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" })
-
+    console.log(place)
     const classes = useStyles();
     return (
         <Card elevation={6}>
@@ -56,14 +56,18 @@ const PlaceDetails = ({ place, selected, refProp }) => {
                     </Typography>
                 )}
 
-                <CardActions>
-                    <Button size="small" color="primary" onClick={() => window.open(place.web_url, '_blank')}>
-                        Trip Advisor
-                    </Button>
-                    <Button size="small" color="primary" onClick={() => window.open(place.website, '_blank')}>
-                        Website
-                    </Button>
-                </CardActions>
+                {place?.web_url && (
+                    <CardActions>
+                        <Button size="small" color="primary" onClick={() => window.open(place.web_url, '_blank')}>
+                            Trip Advisor
+                        </Button>
+                        <Button size="small" color="primary" onClick={() => window.open(place.website, '_blank')}>
+                            Website
+                        </Button>
+                    </CardActions>
+                )}
+
+
 
             </CardContent>
         </Card>
